@@ -78,6 +78,8 @@ jobs:
         run: |
           New-Item -Path .\.sonar\scanner -ItemType Directory
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v2
       - name: Build and analyze with MSBuild
         shell: powershell
         run: |
