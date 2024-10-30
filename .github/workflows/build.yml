@@ -44,6 +44,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"djuarezg_sonar-scanner-msbuild_AZLdGH9oi8nTfs9H_AvT" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"djuarezg_sonar-scanner-msbuild_AZLdGH9oi8nTfs9H_AvT" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}" /d:sonar.links.scm=https://github.com/djuarezg/sonar-scanner-msbuild /d:sonar.links.ci=https://github.com/djuarezg/sonar-scanner-msbuild/actions
           dotnet build CSharpProject/SomeConsoleApplication.sln
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
